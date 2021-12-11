@@ -11,7 +11,8 @@ const url = `${serverUrl}?name=${firstName}`;
 //gender value
 fetch(url)
 .then(response => response.json())
-.then(res => result.textContent = res.gender)
+.then(res => result.textContent = `${firstName} is ${res.gender}`)
 })
+
 
 
