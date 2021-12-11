@@ -9,15 +9,16 @@ btn.addEventListener("click", () => {
   const serverNation = "https://api.nationalize.io";
   const urlGender = `${serverGender}?name=${firstName}`;
   const urlNation = `${serverNation}?name=${firstName}`;
+
   //gender value
   fetch(urlGender)
-    .then((response) => response.json())
-    .then((res) => (result.textContent = `${firstName} is ${res.gender}`))
+    .then(response => response.json())
+    .then(res => result.textContent = `${firstName} is ${res.gender}`)
 
   // In which country is it more common
   fetch(urlNation)
-  .then((response) => response.json())
-  .then((res) =>  a = (res.country).reduce((acc,curr) => acc.probability > curr.probability ? acc : curr))
+  .then(response => response.json())
+  .then(res => (res.country).reduce((acc,curr) => acc.probability > curr.probability ? acc : curr))
   .then(res => result.textContent = `${result.textContent} from country: ${res.country_id}`)
 });
 
