@@ -7,7 +7,7 @@ const resultInner = document.querySelector(".result-inner");
 btn.addEventListener("click", () => {
   //link generation
   const firstName = input.value
-  const serverGender = "https://api.genderiz.io";
+  const serverGender = "https://api.genderize.io";
   const serverNation = "https://api.nationalize.io";
   const urlGender = `${serverGender}?name=${firstName}`;
   const urlNation = `${serverNation}?name=${firstName}`;
