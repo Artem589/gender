@@ -4,6 +4,7 @@ const btn = document.querySelector(".btn-get");
 const resultInner = document.querySelector(".result-inner");
 
 btn.addEventListener("click", () => {
+  
   //link generation
   const firstName = input.value
   const serverGender = "https://api.genderize.io";
@@ -12,7 +13,6 @@ btn.addEventListener("click", () => {
   const urlNation = `${serverNation}?name=${firstName}`;
  
   //gender value
- 
   fetch(urlGender)
     .then(response => response.json())
     .then(result => {
@@ -28,7 +28,6 @@ btn.addEventListener("click", () => {
   .then(response => response.json())
   .then(result => (result.country).reduce((acc,curr) => acc.probability > curr.probability ? acc : curr))
   .then(result => resultInner.textContent = `${resultInner.textContent} from country: ${result.country_id}`)
-  
 });
 
 
