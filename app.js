@@ -1,4 +1,3 @@
-
 const input = document.querySelector(".input-get");
 const btn = document.querySelector(".btn-get");
 const resultInner = document.querySelector(".result-inner");
